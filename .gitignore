@@ -84,6 +84,7 @@ datasets/
 *.hdf5
 *.npy
 *.npz
+me
 
 # =========================
 # Coverage / Testing
