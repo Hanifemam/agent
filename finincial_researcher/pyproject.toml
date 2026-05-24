@@ -1,0 +1,39 @@
+[project]
+name = "finincial_researcher"
+version = "0.1.0"
+description = "finincial_researcher using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3"
+]
+
+[project.scripts]
+finincial_researcher = "finincial_researcher.main:run"
+run_crew = "finincial_researcher.main:run"
+train = "finincial_researcher.main:train"
+replay = "finincial_researcher.main:replay"
+test = "finincial_researcher.main:test"
+run_with_trigger = "finincial_researcher.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/finincial_researcher"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/finincial_researcher",
+    "README.md",
+    "pyproject.toml",
+]
+
+[tool.crewai]
+type = "crew"
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
