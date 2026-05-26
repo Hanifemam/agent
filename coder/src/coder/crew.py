@@ -12,7 +12,7 @@ class Coder:
     tasks: List[Task]
 
     @agent
-    def researcher(self) -> Agent:
+    def coder(self) -> Agent:
         return Agent(
             config=self.agents_config["coder"],
             verbose=True,
